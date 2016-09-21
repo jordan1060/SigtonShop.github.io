@@ -102,10 +102,11 @@ button{
 .container {
 
 	width: 900px;
-	height: 1200px;
+	height: 100%;
 	margin: auto;
 	background-color: #cce6ff;
 	padding-top: 5px;
+	position: static;
 }
 
 .footer {
