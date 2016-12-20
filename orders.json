@@ -1,0 +1,11 @@
+[
+ {
+  "name"     : "How to use this order list",
+  "desc"     : "Welcome to the order list! I'm jokebookservice1, the Chief Programmer at Sigton's Shop. I created this tool, and hope it helps keep the shop organised. Click on an order for more info about it, and use the tags for a quick guide on whether you will be able to complete the order. Orders that have been taken by someone will have a blue tag with the username of the person that took the order. If the order hasn't been taken it will have a blue 'NOT ASSIGNED' tag. To take an order post on the Sigton's Shop thread so that an order list updater can update the list of orders. Enjoy using the tool!",
+  "time"     : "2016-12-19",
+  "due"      : "Tutorials don't have due dates :/",
+  "tags"     : ["meta", "howto", "NOT AN ORDER"],
+  "by"       : "jokebookservice1",
+  "assigned" : ""
+ }
+]

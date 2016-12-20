@@ -1,0 +1,73 @@
+<html>
+  <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<link href="style.css" rel="stylesheet" type="text/css">
+     <title>Order List</title>
+     <style>
+         *{
+             font-family: Helvetica;
+         }
+     </style>
+  </head>
+  <link rel="icon" href="icon.png" type="image/png">
+  <body>
+  		<img src="banner2.png" alt="Sigton's Shop of Code, Art and Advertising" align="center" /><br />
+		<span class='fancy'>Sigton's Shop</span><br/><i>Of code, help, and advertisement</i><br/>
+<nav>
+  <ul class="navigation">
+		  <li><a href="index.html" class="active">Home</a></li>
+		  <li><a href="Examples.html">See examples</a></li>
+		  <li><a href="Staff.html">Our Staff</a></li>
+		  <li><a href="orders.html">Current Orders</a></li>
+		  <li><a href="OrderForm.html">Order Something!</a></li>
+  </ul>
+</nav>
+    <div class="popup"><div class="title">💡 ProTip</div><div class="maintext">Click on an order to see info about it in this menu. Each order has tags and a name, as well as the person that made the order. To find out the description about the order and due date, you'll need to inspect it closer.</div><div class="info"></div></div>
+    <div id="body">
+       <div class="loading">Loading - Please wait</div>
+    </div>
+       <script>
+           function loadOrders(url, errmsg){
+               xmlhttp = new XMLHttpRequest();
+               xmlhttp.open("GET", url, true);
+               xmlhttp.onreadystatechange = function(){
+                   if(xmlhttp.readyState == 4){
+                       if(xmlhttp.status == 200){
+                           parsedData = JSON.parse(xmlhttp.responseText);
+                           document.getElementById("body").innerHTML = "";
+                           for(var i = 0; i < parsedData.length; i++){
+                               el = document.createElement("DIV");
+                               (function(i){
+                                 el.addEventListener("click", function(){
+                                   document.getElementsByClassName("title")[0].innerHTML = parsedData[i]["name"]; 
+                                   document.getElementsByClassName("maintext")[0].innerHTML = parsedData[i]["desc"];
+                                   document.getElementsByClassName("info")[0].innerHTML = `Due Date: ${parsedData[i]["due"]}
+                                   <br/>Made On: ${parsedData[i]["time"]}`;
+                                 });
+                               })(i);
+                               el.className = "order";
+                               el.innerHTML = "<b>" + parsedData[i]["name"] + "</b> <i>ordered by " + parsedData[i]["by"] + " </i> ";
+                               for(var j = 0; j < parsedData[i]["tags"].length; j++){
+                                   el.innerHTML += '<span class="tag">' + parsedData[i]["tags"][j] + "</span>";
+                               }
+                               var tg = '<span class="special tag">';
+                               tg += (parsedData[i]["assigned"])?parsedData[i]["assigned"]:"NOT ASSIGNED";
+                               tg += "</span>";
+                               el.innerHTML += tg;
+                               document.getElementById("body").appendChild(el);
+                           }
+                       } else {
+                           document.getElementById("body").innerHTML += '<div class="error">' + errmsg + "</div>";
+                       }
+                   }
+               }
+               xmlhttp.send();
+           }
+           loadOrders("orders.json?rand=" + Math.random(), "Uh oh! An error occured. *cries*. Try reloading the page.");
+           setInterval(function(){
+               loadOrders("orders.json?rand=" + Math.random(), "Uh oh! An error occured. *cries*. Try reloading the page.");
+           }, 20000);
+       </script>
+  </body>
+</html>
