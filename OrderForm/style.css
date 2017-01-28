@@ -1,0 +1,190 @@
+body, html{
+
+	background-color: White;
+	margin: 0px;
+	padding: 0px;
+	font-family: arial;
+	text-align: center;
+
+}
+
+.active {
+background-color: #0495C4;
+color: white;
+}
+
+ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: #08C2FF;
+}
+
+li {
+float: left;
+}
+
+li a {
+display: block;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+transition: 0.5s;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+background-color: #0495C4;
+}
+
+
+
+.title{
+
+	font-size: 18px; 
+	margin: 10px;
+
+}
+
+.fancy{
+
+	font-family: Magneto, "Blackadder ITC"; 
+	font-size: 50px;
+
+}
+
+.important{
+
+	background-color: pink; 
+    text-align : center;
+    margin-top: 5px;
+}
+  
+a {
+
+	text-decoration: none;
+	color: blue;
+
+}
+
+main{
+
+	font-family: "Kristen ITC";
+	margin: 5px;
+
+}
+  
+input{
+
+	border-radius: 10px;
+	border-color: blue;
+	height: 20px;
+	padding-left: 5px;
+
+}
+
+button{
+
+	border-radius: 10px;
+	border-color: black;
+	background-color: white;
+  
+}
+
+.small{
+
+	font-size: 15px;
+
+}
+
+.container {
+
+	width: 900px;
+	height: 100%;
+	margin: auto;
+	background-color: #cce6ff;
+	padding-top: 5px;
+	position: static;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
+
+img {
+	
+	padding:0px;
+	margin:0px;
+}
+
+.loading{
+	border-radius: 10px;
+	background-color: #ffffaa;
+	color: orange;
+	border: solid orange;
+	padding: 5px;
+}
+
+.error{
+	margin-top       : 2px;
+	border-radius    : 10px;
+	background-color : pink;
+	color            : red;
+	border           : solid red;
+	padding          : 5px;
+}
+
+.order{
+	margin-top       : 2px;
+	border-radius    : 10px;
+	background-color : white;
+	color            : black;
+	border           : dotted lightgrey;
+	padding          : 10px;
+}
+
+.tag{
+	border-radius    : 7px;
+	background-color : lightgreen;
+	color            : green;
+	border           : solid green;
+	padding-left     : 1px;
+	padding-right    : 1px;
+	margin           : 2px;
+}
+
+.special{
+	background-color : lightblue;
+	color            : blue;
+	border           : dotted blue;
+}
+
+.popup{
+	background-color : lightblue;
+	z-index          : 10;
+	padding          : 5px;
+	margin           : 1px;
+	border-radius    : 10px;
+}
+
+.title{
+	font-size: 30px;
+}
+
+.maintext{
+	font-size: 20px;
+	color    : blue;
+}
+
+.info{
+         color: red;
+         font-size: 15px;
+}
